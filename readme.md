@@ -1,4 +1,4 @@
-## How to use
+## How to use JsonFile Class
 ---
 JsonFile jsonFile = new JsonFile();
 <br>
