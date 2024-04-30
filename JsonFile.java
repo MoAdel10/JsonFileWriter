@@ -4,6 +4,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class JsonFile {
+
     public void append(String path, String userName, String email, String password) {
         String jsonContent = "{\n" +
                 "    \"username\": \"" + userName + "\",\n" +

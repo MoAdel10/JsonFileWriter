@@ -17,6 +17,7 @@ public class SignUp extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
+    
     public SignUp() {
         initComponents();
     }
@@ -204,14 +205,14 @@ public class SignUp extends javax.swing.JFrame {
             char[] passwordChars = password.getPassword();
             char[] confirmPasswordChars = confirmPassword.getPassword();
 
-            if(Arrays.equals(passwordChars, confirmPasswordChars)){
+            if(Arrays.equals(passwordChars, confirmPasswordChars) && !(userName.getText()).equals("") && !(email.getText()).equals("") && !(password.getText()).equals("") && !(confirmPassword.getText()).equals("")){
                 JOptionPane.showMessageDialog(null,"Account Registration Completed ");
-//                JsonFile jsonFile = new JsonFile();
-//                String path = "data2.json";
-//
-//        jsonFile.append(path, "Mohamed Adel2", "MoAdel10@gmail.com2", "moAdel2");
+                JsonFile jsonFile = new JsonFile();
+                String path = "data2.json";
+
+                jsonFile.append(path, userName.getText(), email.getText(),new String(passwordChars));
             }else{
-               JOptionPane.showMessageDialog(null,"ERROR\npassword and confirm password should be identical");
+               JOptionPane.showMessageDialog(null,"ERROR\nTry Again\nall field must not be empty\npassword and confirm password should be identical");
             }
            
     }
